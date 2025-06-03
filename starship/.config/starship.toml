@@ -1,9 +1,18 @@
 palette = "catppuccin_mocha"
 command_timeout = 1000
+add_newline = true
+format = """$directory$shell$all$character"""
 
 [character]
 # success_symbol = "[❯](bold peach)"
 vimcmd_symbol = "[󰕷 ❯](bold rosewater)"
+
+[shell]
+fish_indicator = "🌊"
+unknown_indicator = "👀"
+nu_indicator = "🌿"
+disabled = false
+
 [aws]
 symbol = "  "
 
