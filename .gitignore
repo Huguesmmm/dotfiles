@@ -1,0 +1,5 @@
+tmux/.config/tmux/plugins/*
+!tmux/.config/tmux/plugins/catppuccin
+
+fish/.config/fish/completions/*
+fish/.config/fish/functions/*
