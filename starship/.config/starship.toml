@@ -1,11 +1,15 @@
 palette = "catppuccin_mocha"
 command_timeout = 1000
-add_newline = true
-format = """$directory$shell$all$character"""
+add_newline = false
+# format = """$directory$shell$all$fill􁟬  ${custom.airpods} $line_break$character"""
+format = """$directory$shell$all$fill$line_break$character"""
 
 [character]
 # success_symbol = "[❯](bold peach)"
 vimcmd_symbol = "[󰕷 ❯](bold rosewater)"
+
+[fill]
+symbol = ' '
 
 [shell]
 fish_indicator = "🌊"
@@ -32,7 +36,15 @@ symbol = " "
 symbol = " "
 
 [directory]
+truncation_symbol = "…/"
+truncation_length = 4
 read_only = " 󰌾"
+
+# [custom.airpods]
+# command = "echo 􀪷  "
+# when = "blueutil --connected | grep -q 'name: \".*AirPods'"
+# shell = ["fish", "-c"]
+# format = "$output"
 
 [docker_context]
 symbol = " "

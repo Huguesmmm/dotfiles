@@ -1,0 +1,60 @@
+# Catppuccin color palette
+
+# --> special
+set -l foreground dadae8
+set -l selection 3e4058
+
+# --> palette
+set -l teal bee4ed
+set -l flamingo f2cecf
+set -l magenta c6aae8
+set -l pink e5b4e2
+set -l red e38c8f
+set -l peach f9c096
+set -l green b1e3ad
+set -l yellow ebddaa
+set -l blue a4b9ef
+set -l gray 6e6c7e
+
+fish_color_normal $foreground 
+fish_color_command $blue
+fish_color_param $flamingo
+fish_color_keyword $red 
+fish_color_quote $green
+fish_color_redirection $pink
+fish_color_end $peach 
+fish_color_comment 7f849c
+fish_color_error $red 
+fish_color_gray $gray
+fish_color_selection --background=$selection
+fish_color_search_match --background=$selection
+fish_color_option a6e3a1
+fish_color_operator $pink 
+fish_color_escape $flamingo
+fish_color_autosuggestion $gray
+fish_color_cancel $red 
+
+# Prompt
+fish_color_cwd $yellow 
+fish_color_user $teal
+fish_color_host $blue
+fish_color_host_remote a6e3a1
+fish_color_status f38ba8
+fish_pager_color_progress 6c7086
+fish_pager_color_prefix f5c2e7
+fish_pager_color_completion cdd6f4
+fish_pager_color_description 6c7086
+
+# Prompt
+
+# Completion Pager
+fish_pager_color_progress $gray
+fish_pager_color_prefix $pink
+fish_pager_color_completion $foreground
+fish_pager_color_description $gray
+
+# Completion Pager
+fish_pager_color_progress $gray
+fish_pager_color_prefix $pink
+fish_pager_color_completion $foreground
+fish_pager_color_description $gray 
