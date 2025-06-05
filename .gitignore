@@ -1,3 +1,5 @@
+.DS_Store
+.vscode
 tmux/.config/tmux/plugins/*
 !tmux/.config/tmux/plugins/catppuccin
 
