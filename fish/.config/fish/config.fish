@@ -45,6 +45,11 @@ function fish_greeting
   end
 end
 
+function clear --wraps fish_clear
+  command clear
+  fish_greeting
+end
+
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
