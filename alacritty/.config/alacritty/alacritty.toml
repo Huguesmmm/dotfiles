@@ -1,0 +1,36 @@
+general.import = [
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;9~"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;6;9~"
+key = "Tab"
+mods = "Control|Shift"
+
+[font]
+size = 18
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[window]
+decorations = "buttonless"
+opacity = 0.75
+blur = true
+padding.x = 10
+padding.y = 14
+

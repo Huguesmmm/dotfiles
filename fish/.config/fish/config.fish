@@ -30,24 +30,28 @@ set fish_color_autosuggestion 7f849c --italics
 # end
 
 function fish_greeting
-  set -l rand_choice (random 1 4)
-  
-  if test $rand_choice = 1
-    kitty icat --align=left ~/dotfiles/utils/pictures/robot_small.png
-  else if test $rand_choice = 2 
-    kitty icat --align=left ~/dotfiles/utils/pictures/fck_pigeon_v2.png
-  else if test $rand_choice = 3
-    kitty icat --align=left ~/dotfiles/utils/pictures/black_cat_small.png
-  else if test $rand_choice = 4
-    kitty icat --align=left ~/dotfiles/utils/pictures/fck_pigeon_v1.png
-  else
-    kitty icat --align=left ~/dotfiles/utils/pictures/tree.png
+  if string match -q "xterm-kitty" $TERM
+    set -l images ~/dotfiles/utils/pictures/robot_small.png \
+      ~/dotfiles/utils/pictures/fck_pigeon_v2.png \
+      ~/dotfiles/utils/pictures/black_cat_small.png \
+      ~/dotfiles/utils/pictures/fck_pigeon_v1.png \
+      ~/dotfiles/utils/pictures/tree.png
+
+    # Pick one image from the list at random
+    set -l random_image (random choice $images)
+
+    # Display the chosen image
+    kitty icat --align=left $random_image
+  else if string match -q "alacritty" $TERM
+    colorscript -e bloks
   end
 end
 
 function clear --wraps fish_clear
   command clear
-  fish_greeting
+  if string match -q "xterm-kitty" $TERM
+    fish_greeting
+  end
 end
 
 # bun
