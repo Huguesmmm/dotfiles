@@ -25,7 +25,13 @@ There's a lot of things that could be better and a lot of things is up to prefer
 - Tide vs Starship - I think tide is a bit less customizable
 - Shell Color Prompt instead of Pictures - You could use [Shell Color Scripts](https://github.com/charitarthchugh/shell-color-scripts)
 ## Preview
-<img src="https://github.com/user-attachments/assets/df88614d-f366-45a6-90ab-2d2456889927"/>
+<p align="center">
+  <img 
+  src="https://github.com/user-attachments/assets/df88614d-f366-45a6-90ab-2d2456889927" 
+  width="750"
+  />
+</p>
+
 
 ### Some more :
 <table>
