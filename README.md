@@ -24,7 +24,10 @@ There's a lot of things that could be better and a lot of things is up to prefer
 - [lsd vs eza](https://github.com/orgs/eza-community/discussions/679) - [lsd](https://github.com/lsd-rs/lsd) vs [eza](https://github.com/eza-community/eza)
 - Tide vs Starship - I think tide is a bit less customizable
 - Shell Color Prompt instead of Pictures - You could use [Shell Color Scripts](https://github.com/charitarthchugh/shell-color-scripts)
+## Preview
+<img src="https://github.com/user-attachments/assets/df88614d-f366-45a6-90ab-2d2456889927"/>
 
+### Some more :
 <table>
   <tr>
     <td>
