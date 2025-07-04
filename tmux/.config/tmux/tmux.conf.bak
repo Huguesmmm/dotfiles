@@ -1,0 +1,94 @@
+set -g mouse on
+set-option -g default-terminal 'xterm-kitty'
+set-option -ga terminal-overrides ',xterm-kitty:Tc:sitm=\E[3m:ritm=\E[23m'
+
+set -g prefix ^A
+set -g base-index 1
+setw -g mode-keys vi
+set -g history-limit 50000
+set -s set-clipboard on
+set -g allow-passthrough on
+set -ga update-environment TERM
+set -ga update-environment TERM_PROGRAM
+
+set -g status-position top
+set -g status-justify absolute-centre
+set -g status-interval 1
+# set -g status-style "italics"
+set-window-option -g window-status-style 'fg=#{@thm_surface_2}'
+set-window-option -g window-status-current-style 'italics'
+set-window-option -g automatic-rename on
+set-window-option -g automatic-rename-format '#{b:pane_current_path}'
+
+set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'xamut/tmux-weather'
+set -g @plugin 'omerxx/tmux-floax'
+set -g @plugin 'barlevalon/tmux-nowplaying-macos'
+
+set -g @spotifyprefix "j"
+
+# Setting up Neovim navigation
+set -g @plugin 'mrjones2014/smart-splits.nvim'
+set -g @smart-splits_move_left_key  'C-h' # key-mapping for navigation.
+set -g @smart-splits_move_down_key  'C-j' #  --"--
+set -g @smart-splits_move_up_key    'C-k' #  --"--
+set -g @smart-splits_move_right_key 'C-l' #  --"--
+
+set -g @smart-splits_resize_left_key  'M-h' # key-mapping for resizing.
+set -g @smart-splits_resize_down_key  'M-j' #  --"--
+set -g @smart-splits_resize_up_key    'M-k' #  --"--
+set -g @smart-splits_resize_right_key 'M-l' #  --"--
+unbind '"'
+unbind %
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded..."
+bind -n C-Tab select-window -n
+bind -n C-BTab select-window -p
+
+# Setting up Tmux tmux floating window
+set -g @floax-bind 'p'
+
+# Setting up Tmux theme
+set -g @catppuccin_flavor "macchiato"
+set -g @catppuccin_window_status "icon"
+set -g @catppuccin_window_status_style "custom"
+set -g @catppuccin_pane_status_enabled "yes" 
+set -g @catppuccin_pane_border_status "yes"
+# set -g @catppuccin_window_flags "icon"
+set -g @catppuccin_window_current_text_color "#[bg=default,fg=#{@thm_flamingo}"
+set -g @catppuccin_window_text_color "#[bg=default,fg=#{@thm_surface_2}"
+set -g @catppuccin_window_left_separator "#[bg=default,fg=#{@thm_surface_2}] #[bg=default,fg=#{@thm_surface_2}]"
+set -g @catppuccin_window_right_separator "#[bg=default,fg=#{@thm_surface_2}] #[bg=default,fg=#{@thm_surface_2}]"
+set -g @catppuccin_window_current_left_separator "#[bg=default,fg=#{@thm_flamingo}] "
+set -g @catppuccin_window_current_middle_separator ""
+set -g @catppuccin_window_current_right_separator "#[bg=default,fg=#{@thm_flamingo}] #[fg=#{@thm_surface_2}]"
+# set -g @catppuccin_window_number_position "right"
+set -g @catppuccin_status_left_separator ""
+set -g @catppuccin_status_middle_separator ""
+set -g @catppuccin_status_right_separator " "
+run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+run ~/.config/tmux/plugins/tmux-floax/floax.tmux
+
+set -g status-right-length 100
+set -g status-left-length 100
+set -g status-left "#{now_playing}"
+set -g @nowplaying_scrolling_enabled "yes"
+set -g @nowplaying_auto_interval "yes"
+# set -g status-right "#{E:@catppuccin_status_application}"
+set -g status-right "#{E:@catppuccin_status_session}"
+set-option -g window-status-style 'fg=#{@thm_surface_2}'
+set-option -g window-status-separator "#[fg=#585b70]•"
+# set -ag status-right "#{E:@catppuccin_status_uptime}"
+# set -g @catppuccin_window_default_text "#[bg=default,fg=#{@thm_mauve}] #W"
+set -g @catppuccin_window_text " #W"
+set -g @catppuccin_window_current_text " #W#{?window_zoomed_flag, 󰊓,}"
+set -g @catppuccin_pane_default_text "#{b:pane_current_path}"
+set -g @catppuccin_directory_text "#{b:pane_current_path}"
+set -g @catppuccin_status_background "none"
+set -g @catppuccin_menu_selected_style "fg=#{@thm_fg},italics"
+set -g @catppuccin_status_connect_separator "no"
+
+run '~/.tmux/plugins/tpm/tpm'

@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
     zoxide init fish | source
+    jj util completion fish | source
 end
 
 alias vim=nvim
@@ -23,16 +24,20 @@ set fish_color_autosuggestion 7f849c --italics
 abbr -a --position anywhere -- --help '--help | bat -plhelp'
 abbr -a --position anywhere -- -h '-h | bat -plhelp'
 
+# eza config
+set -Ux EXA_STANDARD_OPTIONS -1 --group --group-directories-first --icons
+
 function fzf_preview_simple
   set -l item $argv[1]
 
   if test -f "$item"
     bat --color=always --style=numbers --line-range=:500 "$item"
   else
-    ls -F --color=always "$item" | head -n 50
+    li -1 --color-scale-mode=gradient -F --color=always "$item" | head -n 50
   end
 end
 
+# fzf styling
 set -gx FZF_DEFAULT_OPTS "
   --color=bg+:#25394D,bg:-1,spinner:#F5E0DC,hl:#F38BA8 \
   --color=fg:#CDD6F4,header:#F38BA8,info:#F5E0DC,pointer:#F5E0DC \
@@ -85,3 +90,5 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+fish_add_path /Users/huguesprudhomme/.spicetify
