@@ -5,8 +5,12 @@ add_newline = false
 format = """$directory$shell$all$fill$line_break$character"""
 
 [character]
-# success_symbol = "[❯](bold peach)"
-vimcmd_symbol = "[󰕷 ❯](bold rosewater)"
+# success_symbol = "[􀄵 ](teal)"
+# success_symbol = "[􀄫 ](bold teal)"
+success_symbol = "[✿](bold teal)"
+# success_symbol = "[➜](bold green)"
+error_symbol = "[✿](red)"
+vimcmd_symbol = "[󰕷 ](bold rosewater)"
 
 [fill]
 symbol = ' '
